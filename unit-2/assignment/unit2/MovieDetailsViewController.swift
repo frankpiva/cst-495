@@ -17,18 +17,30 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     var movie: [String: Any]! = [:]
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // print("MovieDetailViewController: prepare()")
+        let movieModalViewController = segue.destination as! MovieModalViewController
+        movieModalViewController.movieId = self.movie["id"] as! Int
+    }
+    
+    @IBAction func didTap(_ sender: UITapGestureRecognizer) {
+        // print("MovieDetailViewController: didTap()")
+        performSegue(withIdentifier: "movieModalSegue", sender: nil)
+    }
+    
+    
     override func viewDidLoad() {
-        print("MovieDetailViewController: viewDidLoad()")
+        // print("MovieDetailViewController: viewDidLoad()")
         super.viewDidLoad()
-        let backdropPath = movie["backdrop_path"] as! String
+        let backdropPath = self.movie["backdrop_path"] as! String
         let backdropUrl = URL(string: "https://image.tmdb.org/t/p/w780" + backdropPath)!
         self.backdropImageView.af_setImage(withURL: backdropUrl)
-        let posterPath = movie["poster_path"] as! String
+        let posterPath = self.movie["poster_path"] as! String
         let posterUrl = URL(string: "https://image.tmdb.org/t/p/w185" + posterPath)!
         self.posterImageView.af_setImage(withURL: posterUrl)
-        self.titleLabel.text = movie["title"] as? String
+        self.titleLabel.text = self.movie["title"] as? String
         self.titleLabel.sizeToFit()
-        self.synopsisLabel.text = movie["overview"] as? String
+        self.synopsisLabel.text = self.movie["overview"] as? String
         self.synopsisLabel.sizeToFit()
     }
 

@@ -24,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6P5-x7-yb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="-1260"/>
+            <point key="canvasLocation" x="918" y="-1180"/>
         </scene>
         <!--Movies-->
         <scene sceneID="tne-QT-ifu">
@@ -124,6 +124,7 @@
                                         <size key="customSize" width="153" height="218"/>
                                         <connections>
                                             <outlet property="posterImageView" destination="buO-6y-RDk" id="M3N-xc-AVi"/>
+                                            <segue destination="lh2-nK-LJJ" kind="show" id="Yvg-po-sq2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -139,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFs-qo-2r5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1252" y="288.30584707646182"/>
+            <point key="canvasLocation" x="1252" y="289"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="VMx-c5-9sJ">
@@ -153,9 +154,13 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKU-dQ-tMf">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKU-dQ-tMf">
                                 <rect key="frame" x="16" y="199" width="116" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gLm-89-ngn" appends="YES" id="Sl7-sS-jZf"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAG-Gw-KHc">
                                 <rect key="frame" x="140" y="294" width="219" height="76"/>
@@ -181,11 +186,43 @@
                         <outlet property="posterImageView" destination="mKU-dQ-tMf" id="muh-Cc-JdM"/>
                         <outlet property="synopsisLabel" destination="pUX-Ga-dAJ" id="Duh-2t-Oqu"/>
                         <outlet property="titleLabel" destination="sAG-Gw-KHc" id="qxG-pV-Ee6"/>
+                        <segue destination="cYD-Os-tdM" kind="presentation" identifier="movieModalSegue" id="yDw-Xm-gUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBU-5l-UWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gLm-89-ngn">
+                    <connections>
+                        <action selector="didTap:" destination="lh2-nK-LJJ" id="rUB-uU-7gX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="582" y="985"/>
+            <point key="canvasLocation" x="918" y="1068"/>
+        </scene>
+        <!--Movie Modal View Controller-->
+        <scene sceneID="4dV-DT-fpt">
+            <objects>
+                <viewController id="cYD-Os-tdM" customClass="MovieModalViewController" customModule="unit2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rLy-Bb-RFP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-UM-43i">
+                                <rect key="frame" x="67" y="134" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9bz-1b-Uas"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sek-PB-pRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918" y="1800"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="eyM-bd-1dP">
@@ -230,4 +267,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="k1T-7T-cl5"/>
+    </inferredMetricsTieBreakers>
 </document>

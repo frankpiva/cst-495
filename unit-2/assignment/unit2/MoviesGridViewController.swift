@@ -30,6 +30,16 @@ class MoviesGridViewController: UIViewController, UICollectionViewDataSource, UI
         return cell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare()")
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        let movie = movies[indexPath.row]
+        let movieDetailsViewController = segue.destination as! MovieDetailsViewController
+        movieDetailsViewController.movie = movie
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+
     override func viewDidLoad() {
         // print("MoviesGridViewController: viewDidLoad()")
         super.viewDidLoad()
