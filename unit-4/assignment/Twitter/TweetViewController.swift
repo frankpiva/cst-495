@@ -13,21 +13,20 @@ class TweetViewController: UIViewController {
     @IBOutlet weak var tweetTextView: UITextView!
     
     override func viewDidLoad() {
-        print("TweetViewController: viewDidLoad()")
+        // print("TweetViewController.swift: viewDidLoad()")
         super.viewDidLoad()
         self.tweetTextView.becomeFirstResponder()
     }
 
     @IBAction func cancelButton(_ sender: Any) {
-        print("TweetViewController: cancelButton()")
+        // print("TweetViewController.swift: cancelButton()")
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func tweetButton(_ sender: Any) {
-        print("TweetViewController: tweetButton()")
+        // print("TweetViewController.swift: tweetButton()")
         if (!self.tweetTextView.text.isEmpty) {
-            print("tweet is empty")
-            TwitterAPICaller.client?.postTweet(tweetString: self.tweetTextView.text, success: {
+            TwitterAPICaller.client?.updateStatus(tweetString: self.tweetTextView.text, success: {
                 self.dismiss(animated: true, completion: nil)
             }, failure: { (error) in
                 print("error posting tweet: \(error)")
