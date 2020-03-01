@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  unit5
 //
-//  Created by admin on 2/26/20.
+//  Created by administrator on 3/1/20.
 //  Copyright © 2020 Frank Piva. All rights reserved.
 //
 
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set applicationId and server based on the values in the Heroku settings.
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "myAppId"
+                configuration.applicationId = "Parstagram"
                 configuration.server = "https://cst-495-unit-5.herokuapp.com/parse"
             })
         )
