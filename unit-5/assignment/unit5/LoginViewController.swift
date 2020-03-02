@@ -27,24 +27,23 @@ class LoginViewController: UIViewController {
             if (user != nil) {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print("Error: \(error?.localizedDescription)")
+                print("LoginViewController.swift: \(error?.localizedDescription)")
             }
         }
     }
-    
+
     @IBAction func tapSignUpButton(_ sender: Any) {
         print("LoginViewController.swift: tapSignUpButton()")
         let user = PFUser()
         user.password = self.passwordTextField.text
         user.username = self.usernameTextField.text
-
         user.signUpInBackground { (success, error) in
             if (success) {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print("Error: \(error?.localizedDescription)")
+                print("LoginViewController.swift: \(error?.localizedDescription)")
             }
         }
     }
-    
+
 }
