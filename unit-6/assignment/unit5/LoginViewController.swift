@@ -13,14 +13,14 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
+
     override func viewDidLoad() {
-        print("LoginViewController.swift: viewDidLoad()")
+        // print("LoginViewController.swift: viewDidLoad()")
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func tapSignInButton(_ sender: Any) {
-        print("LoginViewController.swift: tapSignInButton()")
+        // print("LoginViewController.swift: tapSignInButton()")
         let password = self.passwordTextField.text!
         let username = self.usernameTextField.text!
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func tapSignUpButton(_ sender: Any) {
-        print("LoginViewController.swift: tapSignUpButton()")
+        // print("LoginViewController.swift: tapSignUpButton()")
         let user = PFUser()
         user.password = self.passwordTextField.text
         user.username = self.usernameTextField.text

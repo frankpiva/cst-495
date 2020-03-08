@@ -6,8 +6,9 @@ target 'unit5' do
   use_frameworks!
 
   # Pods for unit5
-  pod "Parse"
   pod "AlamofireImage"
+  pod "MessageInputBar"
+  pod "Parse"
 
   target 'unit5Tests' do
     inherit! :search_paths

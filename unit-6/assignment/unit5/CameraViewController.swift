@@ -16,13 +16,12 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var photoImageView: UIImageView!
 
     override func viewDidLoad() {
-        print("CameraViewController.swift: viewDidLoad()")
+        // print("CameraViewController.swift: viewDidLoad()")
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func tapPhotoImageView(_ sender: Any) {
-        print("CameraViewController.swift: tapPhotoImageView()")
+        // print("CameraViewController.swift: tapPhotoImageView()")
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -35,7 +34,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     @IBAction func tapSubmitButton(_ sender: Any) {
-        print("CameraViewController.swift: tapSubmitButton()")
+        // print("CameraViewController.swift: tapSubmitButton()")
         let photoData = self.photoImageView.image!.pngData()
         let fileObject = PFFileObject(name: "image.png", data: photoData!)
         let post = PFObject(className: "Posts")
@@ -53,6 +52,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // print("CameraViewController.swift: imagePickerController()")
         let image = info[.editedImage] as! UIImage
         let size = CGSize(width: 300, height: 300)
         let scaledImage = image.af_imageScaled(to: size)

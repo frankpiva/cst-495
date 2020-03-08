@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E7EBEC42EF23CA63C325513 /* Pods_unit5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62611CB82A9E816A181FDF41 /* Pods_unit5.framework */; };
 		30BBECF0C17BDB2A4404D124 /* Pods_unit5_unit5UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6779D5911D21958CABC6E3F6 /* Pods_unit5_unit5UITests.framework */; };
+		C330F72A2414600C0054B9B3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C330F7292414600C0054B9B3 /* CommentTableViewCell.swift */; };
 		C355FE0E240C4B2100DA2BEE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C355FE0D240C4B2100DA2BEE /* CameraViewController.swift */; };
 		C355FE10240C728D00DA2BEE /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C355FE0F240C728D00DA2BEE /* PostTableViewCell.swift */; };
 		C36FB831240C09950035F36E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FB830240C09950035F36E /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		6779D5911D21958CABC6E3F6 /* Pods_unit5_unit5UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unit5_unit5UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68674F68E12B04C752A9A319 /* Pods-unit5-unit5UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit5-unit5UITests.release.xcconfig"; path = "Target Support Files/Pods-unit5-unit5UITests/Pods-unit5-unit5UITests.release.xcconfig"; sourceTree = "<group>"; };
 		B9246A0130007C9075967165 /* Pods-unit5Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit5Tests.release.xcconfig"; path = "Target Support Files/Pods-unit5Tests/Pods-unit5Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C330F7292414600C0054B9B3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		C355FE0D240C4B2100DA2BEE /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C355FE0F240C728D00DA2BEE /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		C36FB82D240C09950035F36E /* unit5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unit5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				C3BF448D240C0BD800235CB9 /* FeedViewController.swift */,
 				C355FE0D240C4B2100DA2BEE /* CameraViewController.swift */,
 				C355FE0F240C728D00DA2BEE /* PostTableViewCell.swift */,
+				C330F7292414600C0054B9B3 /* CommentTableViewCell.swift */,
 			);
 			path = unit5;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				C355FE0E240C4B2100DA2BEE /* CameraViewController.swift in Sources */,
 				C36FB831240C09950035F36E /* AppDelegate.swift in Sources */,
 				C3BF448E240C0BD800235CB9 /* FeedViewController.swift in Sources */,
+				C330F72A2414600C0054B9B3 /* CommentTableViewCell.swift in Sources */,
 				C36FB833240C09950035F36E /* SceneDelegate.swift in Sources */,
 				C355FE10240C728D00DA2BEE /* PostTableViewCell.swift in Sources */,
 			);
